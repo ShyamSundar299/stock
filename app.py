@@ -1,7 +1,6 @@
 import numpy as np
 import pickle
-import json
-from flask import Flask,render_template,url_for,jsonify,request
+from flask import Flask,render_template,request
 
 #Create a flask object
 app=Flask(__name__)
@@ -22,9 +21,7 @@ def predict():
     final_input = np.array([[open, high, low, volume]])
     output=regmodel.predict(final_input)[0]
     print('--------------------------',output)
-    return render_template('sb.html',
-                           prediction_text="The Stock Price is {}".format(output))
+    return render_template('sb.html', prediction_text="The Stock Price is {}".format(output))
 
-
-app.run()
-
+if __name__ == '__main__':
+    app.run()
