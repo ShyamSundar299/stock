@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Price Prediction Model</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/sb.css') }}">
+  
+  </style>
+</head>
+<body>
+  <h1>Stock Price Prediction</h1>
+  <div class="container">
+  <form action="/predict" method="post">
+  <center>
+    <div class="input-group">
+    <Label for="Open Values">Enter Open Values:</Label>
+  </div>
+    <input type="number" name="Open Values" placeholder="Open Values" required="required" /><br>
+    <br>
+    <div class="input-group">
+    <Label for="High Values">Enter High Values:</Label>
+  </div>
+    <input type="number" name="High Values" placeholder="High Values" required="required" /><br>
+      <br>
+    <div class="input-group">
+    <Label for="Low Values">Enter Low Values:</Label>
+  </div>
+    <input type="number" name="Low Values" placeholder="Low Values" required="required" /><br>
+    <br>
+    <div class="input-group">2
+    <Label for="Volume Values">Enter Volume Values:</Label>
+  </div>
+    <input type="number" name="Volume Values" placeholder="Volume Values" required="required" /><br>
+    <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</center>
+</form>
+</div>
+<br>
+<br>
+ 
+{{prediction_text}}
+</body>
+</html>
